@@ -51,7 +51,10 @@ class SearchTransactionsByDateInterval
                       $transactions = $result->getTransactions();
                       if (is_array($transactions) && count($transactions) > 0) {
                           foreach ($transactions as $key => $transactionSummary) {
-                            if ($transactionSummary->getStatus()->getValue() == 3) {
+                            $statusTransacao = $transactionSummary->getStatus()->getValue();
+                            // 3	Paga: a transação foi paga pelo comprador e o PagSeguro já recebeu uma confirmação da instituição financeira responsável pelo processamento.
+                            // 4	Disponível: a transação foi paga e chegou ao final de seu prazo de liberação sem ter sido retornada e sem que haja nenhuma disputa aberta.
+                            if ($statusTransacao == 3 || $statusTransacao == 4) {
                                 $quantidadePagSeguro++;
                               }
                           }

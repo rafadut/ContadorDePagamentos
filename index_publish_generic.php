@@ -15,7 +15,7 @@ class SearchTransactionsByDateInterval
         $dataHora = date('Y-m-dh:i', time());
 
         //$dataInicioContagem
-        $dataInicioContagem = date('2017-11-10');
+        $dataInicioContagem = date('Y-m-d',(strtotime ( '-179 day' , strtotime ( $dataHora) ) ));
         $dataInicioContagemFormatoPayPal = $dataInicioContagem . 'T00:00:00Z';
 
         try {

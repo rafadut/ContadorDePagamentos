@@ -119,8 +119,9 @@ class SearchTransactionsByDateInterval
         $jqueryuijs = "jquery-ui.js";
 
         echo '
-          <div id="progressbar"></div>
           <p id="pAmigos">' . $frase . '</p>
+          <div id="progressbar"></div>
+          <h6 id="pAmigos hObs">* Pelo PagSeguro apenas as doações dos últimos seis meses são contadas.</h6>
 
           <link rel="stylesheet" href="' . $jqueryuicss . '">
 
@@ -130,6 +131,9 @@ class SearchTransactionsByDateInterval
             font-weight: 600;
             font-family: proxima-nova, sans-serif;
             color: #3f4752;
+          }
+          hObs {
+            font-size: 0.67em;
           }
           .ui-progressbar-value {
             background: #7cc142;
